@@ -1,28 +1,20 @@
-/* over-ride some odd formatting inherited from prosilver */
-@media only screen and (max-width: 950px) {
-ul.topiclist dt .list-inner {
-    margin: 0;
-}
-}
-
 /**
  * Common tags
  */
-
-@media only screen and (max-width: 700px) {
-
 html,
 body {
 	background: #fff;
 }
+
 /**
  * Structure
  */
-.wrap {
+#wrap {
 	padding: 0;
 }
 
 .inventea-wrapper,
+.inventea-dashboard,
 .inventea-footer {
 	width: 100%;
 	border: 0;
@@ -38,7 +30,7 @@ body {
 }
 
 .inventea-dashboard {
-    width: 100%;
+	min-height: inherit;
 }
 
 .inventea-footer-wrapper {
@@ -56,21 +48,7 @@ body {
  * Forum name and description
  */
 .inventea-sitename {
-    top: calc(50% - 20px);
-    font-size: 13px;
-    line-height: 125%;
-}
-
-.inventea-sitename h1 {
-    margin-bottom: 4px;
-}
-
-.inventea-posts-menu {
-    margin-right: 0;
-}
-
-.inventea-forum-menu {
-    margin-left: 0;
+	padding: 43px 25px 46px;
 }
 
 /**
@@ -84,25 +62,15 @@ body {
 	margin-right: 50px !important;
 }
 
- .inventea-menu li > a {
-        display: block;
-        max-width: 125px;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 4px 1px;
-    }
-	
-.inventea-menu li > a:hover{
-    overflow: visible; 
-    white-space: normal; 
+.inventea-posts-menu,
+.inventea-forum-menu {
+	display: none;
 }
-
 
 .inventea-mobile-dropdown-menu {
 	position: absolute;
 	right: 10px;
-	display: none;
+	display: block;
 	margin-top: -6px;
 }
 
@@ -160,7 +128,6 @@ ul.topiclist.forums dd.lastpost {
 
 ul.topiclist dd.topics,
 ul.topiclist dd.posts,
-ul.topiclist dd.views,
 ul.topiclist dd.lastpost,
 ul.topiclist dd.info,
 ul.topiclist dd.redirect {
@@ -175,6 +142,17 @@ ul.topiclist dd.redirect {
 	background-color: #e9e9e9;
 }
 
+@media only screen and (max-width: 550px), only screen and (max-device-width: 550px) {
+	ul.topiclist.forums dd.lastpost {
+		display: none;
+	}
+
+	ul.linklist > li.inventea-time {
+		float: none;
+		margin: 3px 0 24px;
+		text-align: center;
+	}
+}
 
 /**
  * Posts and private messages
@@ -206,7 +184,7 @@ ul.topiclist dd.redirect {
 }
 
 .post .postprofile {
-	padding: 9px;
+	padding: 18px;
 	margin-bottom: 0;
 	border: 0;
 }
@@ -247,7 +225,7 @@ ul.topiclist dd.redirect {
 }
 
 .search .postbody {
-	padding: 9px;
+	padding: 18px;
 }
 
 /**
@@ -296,75 +274,4 @@ input.tiny {
 #register .inputbox,
 #login .inputbox {
 	width: 100% !important;
-}
-
-}
-
-@media only screen and (max-width: 550px) {
-	.inventea-wrapper {
-	    padding: 14px 5px 5px 5px;
-    	}
-
-.inventea-sitename {
-    line-height: 100%;
-}
-
-	ul.topiclist.forums dd.lastpost {
-		display: none;
-	}
-
-	ul.linklist > li.inventea-time {
-		float: none;
-		margin: 3px 0 3px;
-		text-align: center;
-	}
-
-    .inventea-menu li > a {
-        max-width: 75px;
-    }
-}
-
-@media only screen and (max-width: 450px){
-
-    #pm-disp {
-        font-size: 0;
-    }
-
-    #notif-disp {
-        font-size: 0;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .inventea-menu li > a {
-        max-width: 55px;
-    }
-
-    .inventea-menu li + li {
-    margin-left: 2px;
-}
-
-@media only screen and (max-width: 370px){
-    h1 {
-        font-size: 24px;
-    }
-
-    .inventea-menu li > a {
-        max-width: 50px;
-        padding: 4px 0px;
-    }
-}
-
-
-@media only screen and (max-width: 319px){
-.inventea-mobile-dropdown-menu {
-	display: block;
-    }
-
- .inventea-menu li > a {
-        display: none; 
-    }
-}
 }

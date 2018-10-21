@@ -45,9 +45,17 @@ hr {
 	margin-bottom: 8px;
 }
 
-a {	color: #3f3f3f;	}
+a:link,
+a:visited {
+	color :#3f3f3f;
+}
 
-a:hover, a:focus {	color: #bc2a4d;	}
+a:focus,
+a:hover,
+a:active {
+	text-decoration: underline;
+	color: #bc2a4d;
+}
 
 /**
  * Structure
@@ -57,7 +65,7 @@ a:hover, a:focus {	color: #bc2a4d;	}
  * to fixed width, remove below "max-width" property and set desired width. Next
  * remove links to both responsive.css files in overall_header.html.
  */
-.wrap {
+#wrap {
 	max-width: none;
 	min-width: 0;
 	margin: 0;
@@ -72,7 +80,7 @@ a:hover, a:focus {	color: #bc2a4d;	}
 .inventea-footer {
 	box-sizing: border-box;
 	width: 95%;
-	max-width: none;
+	max-width: 1170px;
 	margin: auto;
 }
 
@@ -91,20 +99,15 @@ a:hover, a:focus {	color: #bc2a4d;	}
 }
 
 .inventea-header {
-    position: relative;
-    margin: auto;
 	width: 100%;
-	background: #b4b4b4;
-    overflow: hidden;
+	background: #292c2f;
 }
 
-.inventea-dashboard img {
-    width: 100%;
-    height: auto;
-}
-
-.inventea-dashboard a {
-	display: block;
+.inventea-dashboard {
+	position: relative;
+	min-height: 240px;
+	background: url("./images/dashboard.jpg") center center no-repeat;
+	background-size: cover;
 }
 
 .inventea-content {
@@ -138,9 +141,7 @@ a:hover, a:focus {	color: #bc2a4d;	}
  * Forum name and description
  */
 .inventea-sitename {
-    position: absolute;
-    left: 5%; 
-    top: 40%;
+	padding: 76px 50px 98px;
 	color: #fff;
 	font-size: 14px;
 }
@@ -168,9 +169,9 @@ ul.linklist.inventea-user-menu > li + li {
 
 /* Notifications and PMs counters */
 .inventea-user-menu > li > a > strong {
-	float: right;
-	margin: -3px 2px 0 6px;
-	padding: 2px 4px 3px;
+	float: left;
+	margin: -3px 6px 0 -11px;
+	padding: 1px 3px 2px;
 	border-radius: 2px;
 	background: #bc2a4d;
 	color: #fff;
@@ -185,27 +186,25 @@ ul.linklist.inventea-user-menu > li + li {
 	padding-left: 3px;
 }
 
+/* Menu items icons */
+.inventea-user-menu > li > a:before {
+	float: left;
+	margin-right: 6px;
+	color: #6b6b6b;
+	font-family: FontAwesome;
+	font-size: 16px;
+}
+
+.inventea-user-menu > .icon-logout > a:before 		{ content: "\f090"; }
+.inventea-user-menu > .icon-register > a:before 	{ content: "\f234"; }
+.inventea-user-menu > .icon-pm > a:before 			{ content: "\f0e0"; }
+.inventea-user-menu > .icon-notification > a:before { content: "\f0f3"; }
+
 /* Small avatar near username */
-a.header-avatar,
-a.header-avatar:hover {
-	text-decoration: none;	
+.header-avatar img {
+	max-height: 21px;
+	margin: -3px 3px 0 0;
 	border-radius: 3px;
-}
-
-a.header-avatar img {
- 	margin-bottom: 2px;
- 	max-height: 20px;
- 	vertical-align: middle;
- 	width: auto;
-}
-
-a.header-avatar span:after {
-    padding-top: 0;
-}
-
-/* pm and notification icons/labels */
-.linklist.compact .rightside > a > span {
-	display: inline;
 }
 
 /**
@@ -220,17 +219,15 @@ a.header-avatar span:after {
  */
 .inventea-posts-menu,
 .inventea-forum-menu {
-	display: block;
+	position: absolute;
 }
 
 .inventea-posts-menu {
-    float: right;
-    margin-right: 2.5%;
+	right: 0;
 }
 
 .inventea-forum-menu {
-    float: left;
-    margin-left: 2.5%;
+	bottom: 0;
 }
 
 .inventea-menu {
@@ -250,9 +247,9 @@ a.header-avatar span:after {
 
 .inventea-menu li > a {
 	display: block;
-	padding: .7vw 10px;
+	padding: 8px 10px;
 	background: #333;
-	background: rgba(0, 0, 0, 0.7);
+	background: rgba(0, 0, 0, 0.5);
 	color: #eee;
 }
 
@@ -268,7 +265,7 @@ a.header-avatar span:after {
  */
 #nav-breadcrumbs {
 	margin-top: 3px;
-	margin-bottom: 3px;
+	margin-bottom: 24px;
 	border: 0;
 }
 
@@ -402,7 +399,7 @@ p.rules img {
 }
 
 /* Disabled board information */
-.information {
+#information {
 	margin-top: 0;
 	margin-bottom: 24px;
 }
@@ -420,12 +417,6 @@ p.rules img {
 /**
  * Pagination
  */
-
-.row .pagination {
-    margin-top: 0px;
-    margin-bottom: 0px;
-}
-
 .pagination {
 	font-size: 12px;
 }
@@ -453,19 +444,4 @@ p.rules img {
 	border-color: #bc2a4d;
 	background-color: #bc2a4d;
 	color: #fff;
-}
-
-.pagination li a:hover, .pagination li a:hover .icon, .pagination .dropdown-visible a.dropdown-trigger, .nojs .pagination .dropdown-container:hover a.dropdown-trigger {
-	background: #bc2a4d;
-	border-color: #bc2a4d;
-	filter: none;
-	color: #FFFFFF;
-	text-shadow: none;
-}
-
-/**
-* Button padding in fieldset
-*/
-fieldset.fields1 ul.recipients  input.button2{
-	padding: 0 10px;
 }
